@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8250DA1D28D0B1D400CC11B0 /* SwiftUI_CoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA1C28D0B1D400CC11B0 /* SwiftUI_CoreDataApp.swift */; };
-		8250DA1F28D0B1D400CC11B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA1E28D0B1D400CC11B0 /* ContentView.swift */; };
 		8250DA2128D0B1D400CC11B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8250DA2028D0B1D400CC11B0 /* Assets.xcassets */; };
 		8250DA2428D0B1D400CC11B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8250DA2328D0B1D400CC11B0 /* Preview Assets.xcassets */; };
 		8250DA2E28D0B1D400CC11B0 /* SwiftUI_CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA2D28D0B1D400CC11B0 /* SwiftUI_CoreDataTests.swift */; };
 		8250DA3828D0B1D400CC11B0 /* SwiftUI_CoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA3728D0B1D400CC11B0 /* SwiftUI_CoreDataUITests.swift */; };
 		8250DA3A28D0B1D400CC11B0 /* SwiftUI_CoreDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA3928D0B1D400CC11B0 /* SwiftUI_CoreDataUITestsLaunchTests.swift */; };
+		8250DA4728D0B1FF00CC11B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA4628D0B1FF00CC11B0 /* AppDelegate.swift */; };
+		8250DA4928D0B22100CC11B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA4828D0B22100CC11B0 /* SceneDelegate.swift */; };
+		8250DA4B28D0B23A00CC11B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA4A28D0B23A00CC11B0 /* ContentView.swift */; };
+		8250DA4D28D0B24E00CC11B0 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA4C28D0B24E00CC11B0 /* AddView.swift */; };
+		8250DA5028D0B28300CC11B0 /* Objects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8250DA4E28D0B28300CC11B0 /* Objects.xcdatamodeld */; };
+		82E128A628D0C1A900F45B89 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E128A428D0C1A900F45B89 /* Items+CoreDataClass.swift */; };
+		82E128A728D0C1A900F45B89 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E128A528D0C1A900F45B89 /* Items+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,6 @@
 /* Begin PBXFileReference section */
 		8250DA1928D0B1D400CC11B0 /* SwiftUI_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250DA1C28D0B1D400CC11B0 /* SwiftUI_CoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CoreDataApp.swift; sourceTree = "<group>"; };
-		8250DA1E28D0B1D400CC11B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8250DA2028D0B1D400CC11B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8250DA2328D0B1D400CC11B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8250DA2928D0B1D400CC11B0 /* SwiftUI_CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_CoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,14 @@
 		8250DA3328D0B1D400CC11B0 /* SwiftUI_CoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_CoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250DA3728D0B1D400CC11B0 /* SwiftUI_CoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CoreDataUITests.swift; sourceTree = "<group>"; };
 		8250DA3928D0B1D400CC11B0 /* SwiftUI_CoreDataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CoreDataUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8250DA4628D0B1FF00CC11B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8250DA4828D0B22100CC11B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8250DA4A28D0B23A00CC11B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../Downloads/CoreData_SwiftUI-master/CoreData_SwiftUI/CoreData_SwiftUI/ContentView.swift"; sourceTree = "<group>"; };
+		8250DA4C28D0B24E00CC11B0 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		8250DA4F28D0B28300CC11B0 /* Objects.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Objects.xcdatamodel; sourceTree = "<group>"; };
+		82E128A428D0C1A900F45B89 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
+		82E128A528D0C1A900F45B89 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		82E128A828D0C5A000F45B89 /* SwiftUI-CoreData-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-CoreData-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +107,15 @@
 		8250DA1B28D0B1D400CC11B0 /* SwiftUI_CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				82E128A828D0C5A000F45B89 /* SwiftUI-CoreData-Info.plist */,
+				8250DA4628D0B1FF00CC11B0 /* AppDelegate.swift */,
+				8250DA4828D0B22100CC11B0 /* SceneDelegate.swift */,
 				8250DA1C28D0B1D400CC11B0 /* SwiftUI_CoreDataApp.swift */,
-				8250DA1E28D0B1D400CC11B0 /* ContentView.swift */,
+				8250DA4A28D0B23A00CC11B0 /* ContentView.swift */,
+				8250DA4C28D0B24E00CC11B0 /* AddView.swift */,
+				82E128A428D0C1A900F45B89 /* Items+CoreDataClass.swift */,
+				82E128A528D0C1A900F45B89 /* Items+CoreDataProperties.swift */,
+				8250DA4E28D0B28300CC11B0 /* Objects.xcdatamodeld */,
 				8250DA2028D0B1D400CC11B0 /* Assets.xcassets */,
 				8250DA2228D0B1D400CC11B0 /* Preview Content */,
 			);
@@ -257,8 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8250DA1F28D0B1D400CC11B0 /* ContentView.swift in Sources */,
+				8250DA5028D0B28300CC11B0 /* Objects.xcdatamodeld in Sources */,
+				82E128A628D0C1A900F45B89 /* Items+CoreDataClass.swift in Sources */,
+				8250DA4728D0B1FF00CC11B0 /* AppDelegate.swift in Sources */,
+				8250DA4B28D0B23A00CC11B0 /* ContentView.swift in Sources */,
+				8250DA4D28D0B24E00CC11B0 /* AddView.swift in Sources */,
 				8250DA1D28D0B1D400CC11B0 /* SwiftUI_CoreDataApp.swift in Sources */,
+				82E128A728D0C1A900F45B89 /* Items+CoreDataProperties.swift in Sources */,
+				8250DA4928D0B22100CC11B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +446,7 @@
 				DEVELOPMENT_TEAM = 2MPX3NCR38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "SwiftUI-CoreData-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -449,7 +475,7 @@
 				DEVELOPMENT_TEAM = 2MPX3NCR38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "SwiftUI-CoreData-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -583,6 +609,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8250DA4E28D0B28300CC11B0 /* Objects.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8250DA4F28D0B28300CC11B0 /* Objects.xcdatamodel */,
+			);
+			currentVersion = 8250DA4F28D0B28300CC11B0 /* Objects.xcdatamodel */;
+			path = Objects.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8250DA1128D0B1D300CC11B0 /* Project object */;
 }
