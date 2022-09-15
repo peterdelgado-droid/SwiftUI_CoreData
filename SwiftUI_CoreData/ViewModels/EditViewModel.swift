@@ -7,50 +7,58 @@
 
 import Foundation
 import CoreData
+import Combine
 
 
-
+//.map { (Items) -> [Items]  in
+//return Items
+//}
 class EditViewModel : ObservableObject {
 
+	
+	private let containerName: String = "Objects"
+	private let entityName: String = "Items"
 	let container: NSPersistentContainer
 	@Published var data: [Items] = []
 
+	//get actual items
+	private let coreDataService = CoreDataServices()
+	private var cancellable = Set<AnyCancellable>()
+
+	
 	init() {
-		container = NSPersistentContainer(name:"Objects")
-		container.loadPersistentStores {( description, error) in
+		container = NSPersistentContainer(name: containerName)
+		container.loadPersistentStores{ (_, error) in
 			if let error = error {
-				print("ERROR LOADING DATA: \(error)")
-			} else {
-				print("Sucessfully loaded Core Data")
+				print("Error loading Core Data!  \(error)")
+
 			}
-		}
-		fetchItem()
-	}
+			self.getItems()
 
-	func fetchItem() {
-		let request = NSFetchRequest<Items>(entityName: "Items")
 
-		do {
-			self.data = try container.viewContext.fetch(request)
-		} catch let error {
-			print("Error fetching. \(error)")
 		}
 	}
-
-	func addFood(name:String, amountUnit:String, amount:Int16) {
-		let newItem = Items(context:container.viewContext)
-//		newItem.name = name
-//		newItem.type = type
-//		newItem.descriptionItem = amount
-		saveData()
-	}
-
-	func saveData() {
-		do {
-			try container.viewContext.save()
-			fetchItem()
-		} catch let error {
-			print("Error saving... \(error)")
+	
+	private func getItems(){
+		let request = NSFetchRequest<Items>(entityName: entityName)
+		do{
+			data = try container.viewContext.fetch(request)
+		} catch let error{
+			print("Error fetching Entities!  \(error)")
 		}
 	}
+	func addSubscribers(){
+		coreDataService.$savedEntities
+
+			.sink { (returnedItems) in
+				self.data = returnedItems
+			}
+			.store(in: &cancellable)
+}
+
+	func updateEntity(entity: Items, name: String, type: String, descriptionItem: String){
+		coreDataService.update(entity: entity, name: name, type: type, descriptionItem: type)
+	}
+
+
 }

@@ -11,9 +11,16 @@ struct EditView: View {
 	@Environment(\.managedObjectContext) var moc
 	@Environment(\.presentationMode) var presentationMode
 
-	@StateObject var items: Items
+	//@StateObject var items: Items
 
-	let viewModel: EditViewModel
+//let viewModel: EditViewModel
+
+	let items: Items
+	@State private var itemName: String = ""
+	let coreDM: CoreDataServices
+	@Binding var needsRefresh: Bool
+
+
 
 	@State private var name = ""
 	@State private var type = ""
@@ -21,15 +28,13 @@ struct EditView: View {
 	@State private var isAlert = false
 
 
-	init(items:Items, viewModel:EditViewModel) {
-		self._items = StateObject(wrappedValue:items)
-		self.viewModel = viewModel
-		self._name = State(initialValue:items.name ?? "g")
-		self._type = State(initialValue: items.type ?? "g")
-		self._descriptionItem = State(initialValue: items.descriptionItem ?? "")
-
-
-	}
+//	init(items:Items, viewModel:EditViewModel) {
+//		self._items = StateObject(wrappedValue:items)
+//	//	self.viewModel = viewModel
+//		self._name = State(initialValue:items.name ?? "g")
+//		self._type = State(initialValue: items.type ?? "g")
+//		self._descriptionItem = State(initialValue: items.descriptionItem ?? "")
+//	}
 
 
 	var body: some View {
@@ -60,9 +65,9 @@ struct EditView: View {
 						print("whoops \(error.localizedDescription)")
 					}
 				}
-				.alert(isPresented: $isAlert) { () -> Alert in
-					Alert(title: Text("Alert"), message: Text("No text field should be empty"), dismissButton: .default(Text("Ok")))
-				}
+//				.alert(isPresented: $isAlert) { () -> Alert in
+//					Alert(title: Text("Alert"), message: Text("No text field should be empty"), dismissButton: .default(Text("Ok")))
+				//}
 			}.navigationBarTitle(Text("Item"))
 		}
 	}

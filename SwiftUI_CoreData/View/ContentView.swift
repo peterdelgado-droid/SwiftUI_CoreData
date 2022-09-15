@@ -10,8 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
 
-	let viewModel: EditViewModel
-	@StateObject var itemsSecond: Items
+	let coreDM: CoreDataServices
+	@State private var itemsNow: [Items] = [Items]()
+	@State private var needsRefresh: Bool = true
+
+
+
+//	let viewModel: EditViewModel
+//	@StateObject var itemsSecond: Items
 
 	@State private var query = ""
     @Environment(\.managedObjectContext) var moc
@@ -22,8 +28,10 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(items, id: \.self) { item in
-					NavigationLink(destination:  EditView(items: itemsSecond, viewModel: viewModel).environment(\.managedObjectContext,
-																		self.moc)) {
+					NavigationLink(destination: EditView(items: itemsNow, coreDM: coreDM, needsRefresh: $needsRefresh),
+								   label: {
+						Text("")
+					}) {
                         VStack(alignment: .leading) {
 							HStack{
 								Text("Name:")
