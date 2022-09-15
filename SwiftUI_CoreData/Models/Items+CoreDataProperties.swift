@@ -16,9 +16,9 @@ extension Items {
         return NSFetchRequest<Items>(entityName: "Items")
     }
 
-    @NSManaged public var firstName: String?
-    @NSManaged public var gender: String?
-    @NSManaged public var lastName: String?
+	@NSManaged public var type: String?
+    @NSManaged public var name: String?
+	@NSManaged public var descriptionItem: String?
 
 }
 

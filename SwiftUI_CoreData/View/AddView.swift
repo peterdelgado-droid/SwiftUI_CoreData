@@ -11,38 +11,36 @@ struct AddView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var gender = ""
+    @State private var name = ""
+    @State private var type = ""
+    @State private var descriptionItem = ""
     @State private var isAlert = false
     
-    private let genders = ["Male", "Female"]
+
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Enter first name", text: $firstName)
+                    TextField("Enter name of item", text: $name)
                         .disableAutocorrection(true)
-                    TextField("Enter last name", text: $lastName)
+                    TextField("Enter type", text: $type)
                         .disableAutocorrection(true)
-                    Picker("Select gender", selection: $gender) {
-                        ForEach(genders, id: \.self) { gender in
-                            Text(gender)
-                        }
-                    }
+					TextField("Enter Description", text: $descriptionItem)
+						.disableAutocorrection(true)
+                    
                 }
                 Button ("Add info") {
-                    if self.firstName == "" ||
-                        self.lastName == "" ||
-                        self.gender == "" {
+					if self.name == "" ||
+						self.type == "" ||
+						self.descriptionItem == "" {
                         self.isAlert = true
                         return
                     }
                     let item = Items(context: self.moc)
-                    item.firstName = self.firstName
-                    item.lastName = self.lastName
-                    item.gender = self.gender
+                    item.name = self.name
+                    item.type = self.type
+					item.descriptionItem = self.descriptionItem
                     do {
                         try self.moc.save()
                     } catch {
@@ -52,7 +50,7 @@ struct AddView: View {
                 .alert(isPresented: $isAlert) { () -> Alert in
                     Alert(title: Text("Alert"), message: Text("No text field should be empty"), dismissButton: .default(Text("Ok")))
                 }
-            }.navigationBarTitle(Text("User Info View"))
+            }.navigationBarTitle(Text("Item"))
         }
     }
 }
