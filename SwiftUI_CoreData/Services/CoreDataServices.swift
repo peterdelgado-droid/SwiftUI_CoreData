@@ -8,13 +8,15 @@
 import Foundation
 import CoreData
 
-class CoreDataServices{
+class CoreDataServices : ObservableObject{
 
-	private let container: NSPersistentContainer
-	private let containerName: String = "Objects"
-	private let entityName: String = "Items"
+	public let container: NSPersistentContainer
+	public let containerName: String = "Ob"
+	public let entityName: String = "Items"
+
 
 	@Published var savedEntities: [Items] = []
+	@Published var savedEntitiesEmp: [Employee] = []
 
 	init(){
 		container = NSPersistentContainer(name: containerName)
@@ -24,19 +26,29 @@ class CoreDataServices{
 
 			}
 			self.getItems()
+		//	self.getEmployees()
 
 
 		}
 
 	}
-	private func getItems(){
-		let request = NSFetchRequest<Items>(entityName: entityName)
+	 func getItems(){
+		let request = NSFetchRequest<Items>(entityName: "Items")
 		do{
 			savedEntities = try container.viewContext.fetch(request)
 		} catch let error{
 			print("Error fetching Entities!  \(error)")
 		}
 	}
+
+//	func getEmployees(){
+//		let requestEmp = NSFetchRequest<Employee>(entityName: entityEmp)
+//		do{
+//			savedEntitiesEmp = try container.viewContext.fetch(requestEmp)
+//		} catch let error{
+//			print("Error fetching Entities!  \(error)")
+//		}
+//	}
 
 
 	public func update(entity: Items, name: String, type: String, descriptionItem: String){
@@ -48,7 +60,7 @@ class CoreDataServices{
 
 
 
-	private func save(){
+	 func save(){
 		do{
 			try container.viewContext.save()
 
@@ -59,7 +71,7 @@ class CoreDataServices{
 	}
 
 
-	private func applyChanges(){
+	 func applyChanges(){
 		save()
 		getItems()
 

@@ -2,7 +2,7 @@
 //  Items+CoreDataClass.swift
 //  SwiftUI_CoreData
 //
-//  Created by Peter Delgado on 13/9/22.
+//  Created by Peter Delgado on 16/9/22.
 //
 //
 

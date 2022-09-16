@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
 	let coreDM: CoreDataServices
-	@State private var itemsNow: [Items] = [Items]()
+	@State private var itemsPlus: [Items] = [Items]()
 	@State private var needsRefresh: Bool = true
 
 
@@ -27,11 +27,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+				
                 ForEach(items, id: \.self) { item in
-					NavigationLink(destination: EditView(items: itemsNow, coreDM: coreDM, needsRefresh: $needsRefresh),
-								   label: {
-						Text("")
-					}) {
+					NavigationLink(destination:  EditView(itemsNow: item, coreDM: coreDM, needsRefresh: $needsRefresh).environment(\.managedObjectContext, self.moc))
+
+
+					{
                         VStack(alignment: .leading) {
 							HStack{
 								Text("Name:")
